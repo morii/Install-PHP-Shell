@@ -11,7 +11,7 @@ function make_new_user($user) {
   $home = "/home/{$user}/";
   if(!mkdir("{$home}bin", 0755, true))
     return 0;
-  if(!copy('PHP-Shell/php_shell', "{$home}bin/php_shell"))
+  if(!copy('PHP-Shell/php_shell.php', "{$home}bin/php_shell"))
     return 0;
   exec("echo {$home}bin/php_shell >>/etc/shells");
   exec("groupadd {$user}", $out, $ret);
