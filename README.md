@@ -13,12 +13,10 @@ You need to be root to use this script.
 
 You can pass two arguments:
 
--u NEW_USER
---user NEW_USER
-  The new user will have given NEW_USER name.
+`-u NEW_USER` | `--user NEW_USER`
+  The new user will have NEW_USER name.
 
--t
---test
+`-t` | `--test`
   Launches the tests of PHP Shell (not done yet).
 
 TODO List
@@ -28,6 +26,8 @@ Things that still need to be done:
 
 * Launching PHP Shell tests using command line argument.
 * Writing out commands, without actually executing them.
+* uninstall function
+* update function (synchronizing with git repository)
 
 Contributing
 ------------
