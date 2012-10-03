@@ -47,7 +47,6 @@ function process_args() {
     case 'test':
       global $test;
       $test = true;
-      echo 'test';
       break;
     }
   }
@@ -64,13 +63,14 @@ $user = 'php_shell';
 $test = false;
 process_args();
 
-# Check if the PHP-Shell dir exist if not clone
-echo "Starting instalation:\n";
-echo "Clonning repository:\t";
-#if(git_clone())
-#  echo "OK\n";
-#else
-#  die("Failed\nCouldn't clone repository: check you internet connection\n");
+if(!file_exists('PHP-Shell')) {
+  echo "Starting instalation:\n";
+  echo "Clonning repository:\t";
+  if(git_clone())
+    echo "OK\n";
+  else
+    die("Failed\nCouldn't clone repository: check you internet connection\n");
+}
 
 if($test) {
   echo "Making tests:\n";
