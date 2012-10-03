@@ -17,14 +17,13 @@ You can pass two arguments:
   The new user will have NEW_USER name.
 
 `-t` | `--test`
-  Launches the tests of PHP Shell (not done yet).
+  Launches the tests of PHP Shell.
 
 TODO List
 ---------
 
 Things that still need to be done:
 
-* Launching PHP Shell tests using command line argument.
 * Writing out commands, without actually executing them.
 * uninstall function
 * update function (synchronizing with git repository)

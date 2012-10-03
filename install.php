@@ -47,26 +47,40 @@ function process_args() {
     case 'test':
       global $test;
       $test = true;
+      echo 'test';
       break;
     }
   }
 }
+
+function test() {
+  $out = array();
+  $ret = -1;
+  system('cd PHP-Shell; ./test.php');
+}
 ?>
 <?php
 $user = 'php_shell';
+$test = false;
+process_args();
+
+# Check if the PHP-Shell dir exist if not clone
+echo "Starting instalation:\n";
+echo "Clonning repository:\t";
+#if(git_clone())
+#  echo "OK\n";
+#else
+#  die("Failed\nCouldn't clone repository: check you internet connection\n");
+
+if($test) {
+  echo "Making tests:\n";
+  test();
+}
+
 if(getenv('USER') != 'root') 
   die("You need to be root to be able install PHP Shell\n");
 
-process_args();
-
-echo "Starting instalation:\n";
-echo "Clonning repository:\t";
-if(git_clone())
-  echo "OK\n";
-else
-  die("Failed\nCouldn't clone repository: check you internet connection\n");
-
-$ret = make_new_user($user); 
+$ret = make_new_user($user);
 echo "Making new user:\t";
 if($ret)
   echo "OK\n";
